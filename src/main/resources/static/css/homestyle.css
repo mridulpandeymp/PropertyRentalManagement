@@ -1,0 +1,940 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+ 
+a {
+    text-decoration: none;
+}
+ 
+/* Navbar Styling */
+.navbar {
+    /* background-color: #2c3e50; */
+    background-color: #2b250e;
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.navbar-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f1c40f;
+}
+ 
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+ 
+.nav-links a {
+    color: #ecf0f1;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+}
+ 
+.nav-links a:hover {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    border-radius: 5px;
+}
+ 
+/* Banner Styling */
+.banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-top: 70px;
+}
+ 
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+ 
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+ 
+.banner h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+ 
+.banner p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+ 
+/* Search and Filter Section */
+.filter-section {
+    padding: 60px 0;
+    background-color: #ecf0f1;
+}
+ 
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+ 
+.filter-container form {
+    display: flex;
+    gap: 10px;
+}
+ 
+.filter-container input,
+.filter-container select {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    transition: border 0.3s;
+}
+ 
+.filter-container input:focus,
+.filter-container select:focus {
+    border-color: #f1c40f;
+    outline: none;
+}
+ 
+.btn-primary {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+ 
+.btn-primary:hover {
+    background-color: #e67e22;
+    color: white;
+}
+ 
+/* Cards Section Styling */
+.cards-container {
+    padding: 60px 0;
+    background-color: #ecf0f1;
+}
+ 
+.cards-title h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+ 
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+ 
+.card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+ 
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+ 
+.card h3 {
+    font-size: 22px;
+    color: #34495e;
+    margin: 15px 0;
+}
+ 
+.card p {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+ 
+.card:hover {
+    transform: translateY(-10px);
+}
+ 
+.btn-secondary {
+    /* background-color: #2c3e50; */
+    background-color: #2b250e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-top: 15px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+ 
+.btn-secondary:hover {
+    background-color: #e67e22;
+}
+ 
+/* Services Section Styling */
+.services-section .card i {
+    color: #28a745;
+    margin-bottom: 15px;
+}
+ 
+/* Testimonial Cards */
+.testimonial-card {
+    background-color: #f9f9f9;
+    font-style: italic;
+    padding: 20px;
+}
+ 
+.testimonial-card h4 {
+    margin-top: 15px;
+    font-weight: bold;
+}
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.content {
+    flex: 1; /* This allows the content area to grow and fill space */
+    
+}
+ 
+.footer {
+    background-color: #2b250e;
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+    width: 100%; /* Ensure the footer spans the full width */
+}
+ 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 90px;
+    flex-wrap: wrap;
+}
+ 
+.footer-left {
+    width: 40%;
+}
+ 
+.footer-left h3 {
+    font-size: 24px;
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+ 
+.footer-left p {
+    font-size: 16px;
+    color: #bdc3c7;
+}
+ 
+.footer-right {
+    width: 40%;
+    text-align: right;
+}
+ 
+.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+ 
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+ 
+.social-icons a:hover {
+    color: #f1c40f;
+}
+ 
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+ 
+.footer-bottom p {
+    margin: 0;
+}
+ 
+/* About Section Styles */
+.about-section {
+    background-color: #fff;
+    padding: 4em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+ 
+.about-container {
+    display: flex;
+    gap: 3em; /* Space between content and image */
+    align-items: center;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center; /* Centering the content */
+}
+ 
+.about-content {
+    flex: 1; /* Allows the content to take available space */
+    min-width: 300px; /* Prevents content from getting too small */
+    max-width: 600px; /* Maintains a maximum width */
+}
+ 
+.about-content h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 1em;
+}
+ 
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+}
+ 
+.about-content .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+ 
+.about-content .btn-primary:hover {
+    background-color: #0056b3;
+}
+ 
+.about-image {
+    flex: 1; /* Allows the image to take available space */
+    min-width: 300px; /* Prevents image from getting too small */
+    text-align: center; /* Centers the image */
+}
+ 
+.about-image img {
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+ 
+ 
+/* Why Choose Us Section */
+.why-choose-us {
+    background-color: #f8f9fa;
+    padding: 4em 2em;
+    text-align: center;
+}
+ 
+.why-choose-us h2 {
+    font-size: 28px;
+    margin-bottom: 2em;
+}
+ 
+.why-choose-us-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5em;
+}
+ 
+.why-card {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1 1 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.why-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+ 
+.why-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 1em;
+}
+ 
+.why-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+ 
+ 
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .about-container, .why-choose-us-container {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .why-card {
+        max-width: 90%;
+        margin-bottom: 1em;
+    }
+}
+ 
+ 
+ 
+/* Dashboard Section */
+.dashboard-section {
+    margin-top: 70px; /* Adjust according to the height of your navbar */
+    padding: 20px;
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+}
+ 
+/* Container for Cards */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+ 
+/* Dashboard Card Styles */
+.dashboard-card {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with some transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+ 
+/* Card Heading Styles */
+.dashboard-card h2 {
+    color: #333;
+}
+ 
+/* Card Paragraph Styles */
+.dashboard-card p {
+    color: #777;
+}
+ 
+/* Button Styles */
+.dashboard-card .btn-primary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #000000; /* Primary button color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+ 
+/* Button Hover Effects */
+.dashboard-card .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+ 
+/* Card Hover Effects */
+.dashboard-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+ 
+ 
+ 
+ 
+body {
+    /* Background color or image */
+    background-color: #f0f0f0; /* Light grey background */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    
+    /* Text styling */
+    font-family: 'Arial', sans-serif; /* Font family */
+    color: #333; /* Text color */
+    
+    /* Margins and padding */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    
+    /* Additional properties */
+    line-height: 1.6; /* Line height for better readability */
+    height: 100vh; /* Full height of the viewport */
+}
+ 
+ 
+ 
+ 
+.cards-header {
+    display: flex;
+    justify-content: space-between; /* Space between header and link */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the header */
+}
+ 
+.cards-header h2 {
+    margin: 0; /* Remove default margin from the header */
+}
+ 
+/* Existing styles for see-all-link */
+.see-all-link {
+    background-color: #f1c40f; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    margin-right: 10px;
+}
+ 
+.see-all-link:hover {
+    background-color: #e0b10f; /* Darker shade on hover */
+}
+ 
+ 
+ 
+/* Carousel Styling */
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+ 
+ 
+ 
+ 
+/* Arrows */
+.arrow {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+ 
+.left-arrow {
+    left: 10px;
+}
+ 
+.right-arrow {
+    right: 10px;
+}
+ 
+ 
+/* Styling for the Filter Section */
+.filter-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 70px 5px 5px 5px;
+    font-family: 'Arial', sans-serif;
+    position: fixed;
+    width: 100%;                  /* Full width */
+    z-index: 999;
+    
+    
+}
+ 
+.filter-section form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+ 
+/* General Form Group Styling */
+.filter-section .form-group {
+    margin: 10px;
+    flex: 1 1 200px;
+    margin-bottom: 15px;
+}
+/* Label Styling */
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+}
+ 
+/* Input and Select Styling */
+.filter-section input[type="text"],
+.filter-section select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+ 
+.filter-section input[type="text"]:focus,
+.filter-section select:focus {
+    border-color: #5a9;
+    outline: none;
+}
+ 
+/* Styling the Checkboxes */
+/* Dropdown styling */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+ 
+.dropdown-btn {
+    background-color: #ffffff;
+    color: rgb(5, 5, 5);
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+}
+ 
+.dropdown-btn::after {
+    content: '\25BC'; /* Down arrow */
+    float: right;
+    margin-right: 10px;
+}
+ 
+.dropdown-btn:hover {
+    background-color: #c1c1c1;
+}
+ 
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto; /* Allow scrolling if there are many facilities */
+}
+ 
+.custom-dropdown .checkboxes label {
+    display: block;
+    padding: 5px 0;
+    white-space: nowrap; /* Ensure the label doesn't break onto a new line */
+}
+ 
+.custom-dropdown .checkboxes input[type="checkbox"] {
+    margin-right: 10px;
+}
+ 
+.dropdown-content.show {
+    display: block;
+}
+ 
+ 
+/* Submit Button Styling */
+.btn-primary {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+ 
+.btn-primary:hover {
+    background-color: #218838;
+}
+ 
+.btn-primary:active {
+    background-color: #1e7e34;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+/* Lease Agreements Section */
+.lease-agreements-section {
+    margin-top: 70px; /* Ensure it appears below the navbar */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+     width: 100%;            /* Full width */
+    height: 100vh;         /* Full height of the viewport */
+    display: flex;         /* Use flexbox for layout */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: stretch;  /* Ensure child elements stretch to fill width */
+    padding: 20px;         /* Optional padding for inner spacing */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    overflow: auto;        /* Add scroll if content overflows */
+}
+ 
+/* Lease Agreements Title */
+.lease-agreements-title {
+    text-align: center;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+ 
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 1px solid #ddd; /* Border for the table */
+}
+ 
+.table th, .table td {
+    padding: 15px;
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Border for table cells */
+}
+ 
+.table th {
+    background-color: #f1c40f; /* Header background color */
+    color: #fff; /* Header text color */
+    font-weight: bold; /* Bold header text */
+}
+ 
+.table tr:hover {
+    background-color: #f2f2f2; /* Hover effect for rows */
+}
+ 
+/* Additional styles for a modern look */
+.table th {
+    border-bottom: 2px solid #f39c12; /* Thicker bottom border for header */
+}
+ 
+.table td {
+    border-top: 1px solid #ddd; /* Top border for cells for better separation */
+}
+ 
+/* Responsive table styling */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+ 
+    .table th, .table td {
+        padding: 10px; /* Reduced padding for smaller devices */
+    }
+}
+ 
+/* Action Buttons for Each Row */
+.table .btn-action {
+    background-color: #007BFF; /* Primary button color */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+ 
+.table .btn-action:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+ 
+/* Lease Agreement Detail Section */
+.lease-agreement-detail-section {
+    margin-top: 70px; /* Ensure it appears below the navbar */
+    padding: 20px;
+    background-color: #ffffff; /* White background for clarity */
+}
+ 
+/* Detail Title */
+.lease-agreement-detail-title {
+    text-align: center;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+ 
+/* Detail Content Styling */
+.detail-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content */
+    padding: 20px;
+    border: 1px solid #ddd; /* Border for clarity */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+ 
+/* Detail Item Styling */
+.detail-item {
+    margin-bottom: 15px; /* Space between items */
+    font-size: 16px;
+    color: #333; /* Dark text color */
+}
+ 
+/* Button to go back or take actions */
+.btn-back {
+    background-color: #28a745; /* Green button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+ 
+.btn-back:hover {
+    background-color: #218838; /* Darker shade on hover */
+}
+ 
+ 
+.signatures {
+    position: relative;
+    margin-top: 200px; /* Adjust to give space before signatures */
+}
+ 
+.landlord-signature {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 20px; /* Adjust margin as needed */
+}
+ 
+.tenant-signature {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 16px;
+    text-align: right;
+    margin-right: 20px; /* Adjust margin as needed */
+}
+ 
+.signatures p {
+    margin: 0;
+    padding: 0;
+}
+ 
+	/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+ 
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+ 
+.udropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+ 
+.udropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+ 
+.udropdown-content a:hover { background-color: #ddd; }
+ 
+.dropdown:hover .udropdown-content { display: block; }
+	
+ 
+ 
+ 
+ 
